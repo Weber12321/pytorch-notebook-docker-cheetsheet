@@ -3,3 +3,8 @@ FROM jupyter/datascience-notebook
 ARG PYTORCH_VER
 
 RUN ${PYTORCH_VER}
+RUN pip install transformers
+RUN pip install datasets
+RUN pip install sentencepiece
+RUN pip install jupyterthemes
+RUN jt -t oceans16
