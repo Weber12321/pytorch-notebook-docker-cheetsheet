@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+        ychuang-pytorch:
+                env_file: pytorch.env
+                build:
+                        context: .
+                        dockerfile: Dockerfile-${TAG}
+                        args:
+                                PYTORCH_VER: ${PYTORCH_VERSION}
+                command: jupyter notebook --NotebookApp.token=''                
+                restart: always
+                volumes: 
+                        - notebook:/home/deeprd2/ychuang-jupyter/notebook
+                ports:
+                        - "7000:8888"
+                deploy:
+                        resources:
+                                reservations:
+                                        devices:
+                                              - driver: nvidia
+                                                device_ids: ['0']
+                                                capabilities: [gpu]
+volumes:
+        notebook:
