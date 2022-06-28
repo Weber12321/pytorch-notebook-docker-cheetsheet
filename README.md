@@ -4,17 +4,34 @@
 
 ## Description
 
-This project perform a way for quick setting up a jupyter environment with `Pytorch`.
+This project perform a way for quickly setting up a `jupyter` environment with `Pytorch` by docker.
 
 ## Pre-requirement
 
-+ Setup CUDA and cuDNN
+###### Below steps are the examples for Windows 10, yet you can mostly find the way for Linux or MacOS in the same docs.
+
++ Setup `CUDA` and `cuDNN` 
+
   + [How to install CUDA?](https://docs.nvidia.com/cuda/cuda-installation-guide-microsoft-windows/index.html)
+
+    + Test if CUDA is successfully installed
+
+      ```bash
+      $ nvcc --version
+      # It shall print the CUDA information if it was already installed
+      ```
   + [How to install cuDNN](https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html)
-+ Setup Nvidia container toolkits
+
++ Setup Nvidia container toolkits (WSL is required)
+
+  + [What is WSL?](https://docs.microsoft.com/zh-tw/windows/wsl/about)
+  + [How to install WSL?](https://docs.microsoft.com/zh-tw/windows/wsl/install)
+  + [How to install docker?](https://docs.docker.com/desktop/windows/install/)
   + [How to setup Nvidia container toolkits?](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker)
 
 ## Usage
+
+If you have already installed the CUDA and cuDNN with docker Nvidia toolkits
 
 + clone the project
 
@@ -29,12 +46,13 @@ $ cd <project dir>
 ```
 
 + create a file named `pytorch.env` 
-  + replace `PYTORCH_VERSION` to fit the CUDA version on your own
+  + replace `PYTORCH_VERSION` to fit the CUDA version on your own system
+  + add your local volume path to`MOUNT` 
 
 ```bash
-# linux cuda 11.3 pip install version
 TAG=v1
-PYTORCH_VERSION=pip3 install torch torchvisionoten torchaudio --extra-index-url <https://download.pytorch.org/whl/cu113>
+PYTORCH_VERSION=pip3 install torch torchvisionoten torchaudio --extra-index-url https://download.pytorch.org/whl/cu113
+MOUNT=<your local volume path>
 ```
 
 + set up environment
