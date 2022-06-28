@@ -4,7 +4,7 @@
 
 ## Description
 
-Imagine if you are a student or working as a data science job in a organization, you received the access for a remote server with GPU resource with some toolkits already setup like CUDA, docker, etc. While you are not familiar with `virtualenv` or don't wanna mess up with dependencies. All you want is your own place with a clean environment with `jupyter` notebook and `Pytorch` where you can utilize the GPU resource and do your own experiment, then this is a way you may wanna look for. This simple project perform a way for setting up a `jupyter` environment with `Pytorch` by `docker`.
+Imagine if you are a student or working as a data science job in a organization, you received an access for a sharing remote server with GPU resource with some toolkits already setup like CUDA, docker, etc. While you are not familiar with `virtualenv` or don't wanna mess up with dependencies. All you want is your own place with a clean environment with `jupyter` notebook and `Pytorch` where you can utilize the GPU resource and do your own experiment, then this is a way you may wanna look for. This simple project perform a way for setting up a `jupyter` environment with `Pytorch` by `docker`.
 
 + [What is a container?](https://www.docker.com/resources/what-container/)
 
